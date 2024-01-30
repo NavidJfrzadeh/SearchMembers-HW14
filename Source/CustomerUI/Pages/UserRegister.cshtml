@@ -1,0 +1,64 @@
+﻿@page
+@using Entities;
+@model CustomerUI.Pages.UserRegisterModel
+@{
+}
+
+<body class="bg-info bg-opacity-25">
+    <div class="container col-lg-4 bg-light border border-3 rounded">
+        <form method="post">
+            <div class="text-center">
+                <h4 class="my-3">فرم ثبت نام کاربر</h4>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.NewMember.Name" class="form-label"></label>
+                <input asp-for="@Model.NewMember.Name" type="text" class="form-control">
+                <span asp-validation-for="@Model.NewMember.Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.NewMember.LastName" class="form-label"></label>
+                <input asp-for="@Model.NewMember.LastName" type="text" class="form-control">
+                <span asp-validation-for="@Model.NewMember.LastName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.NewMember.BirthDay" class="form-label"></label>
+                <input asp-for="@Model.NewMember.BirthDay" type="date" class="form-control" value="@DateOnly.FromDateTime(DateTime.Now)">
+                <span asp-validation-for="@Model.NewMember.BirthDay" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.NewMember.PhoneNumber" class="form-label"></label>
+                <input asp-for="@Model.NewMember.PhoneNumber" type="number" class="form-control" maxlength="11">
+                <span asp-validation-for="@Model.NewMember.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.NewMember.NationalCode" class="form-label"></label>
+                <input asp-for="@Model.NewMember.NationalCode" type="number" class="form-control" maxlength="10">
+                <span asp-validation-for="@Model.NewMember.NationalCode" class="text-danger"></span>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" asp-for="@Model.NewMember.Gender" type="radio" value="@GenderEnum.Female">
+                <label class="form-check-label" asp-for="@Model.NewMember.Gender">زن</label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" asp-for="@Model.NewMember.Gender" type="radio" value="@GenderEnum.Male">
+                <label class="form-check-label" asp-for="@Model.NewMember.Gender">مرد</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" asp-for="@Model.NewMember.MemType" type="radio" value="@MemberShip.Gold" />
+                <label class="form-check-label" asp-for="@Model.NewMember.MemType">طلایی</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" asp-for="@Model.NewMember.MemType" type="radio" value="@MemberShip.Silver" />
+                <label class="form-check-label" asp-for="@Model.NewMember.MemType">نقره ای</label>
+            </div>
+            <div class="form-check mb-5">
+                <input class="form-check-input" asp-for="@Model.NewMember.MemType" type="radio" value="@MemberShip.Bronze" />
+                <label class="form-check-label" asp-for="@Model.NewMember.MemType">برنز</label>
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success mb-3 fs-5">ثبت</button>
+            </div>
+        </form>
+    </div>
+</body>

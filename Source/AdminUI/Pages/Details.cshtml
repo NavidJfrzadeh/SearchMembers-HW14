@@ -1,0 +1,35 @@
+﻿@page
+@model AdminUI.Pages.DetailsModel
+@{
+}
+
+
+<div class="my-5 col-lg-5 container">
+    <h2>Details for : @Model.CurrentMember.Name</h2>
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">نام</th>
+                <th scope="col">نام خانوادگی</th>
+                <th scope="col">تاریخ تولد</th>
+                <th scope="col">شماره تماس</th>
+                <th scope="col">کد ملی</th>
+                <th scope="col">جنسیت</th>
+                <th scope="col">نوع عضویت</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr>
+                <th scope="row">@Model.CurrentMember.Id</th>
+                <td>@Model.CurrentMember.Name</td>
+                <td>@Model.CurrentMember.LastName</td>
+                <td>@Model.CurrentMember.BirthDay</td>
+                <td>@Model.CurrentMember.PhoneNumber</td>
+                <td>@Model.CurrentMember.NationalCode</td>
+                <td>@Model.CurrentMember.Gender</td>
+                <td>@Model.CurrentMember.MemType</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,64 @@
+﻿@page
+@using Entities
+@model AdminUI.Pages.UpdateModel
+@{
+}
+
+<body class="bg-info bg-opacity-25">
+    <div class="container col-lg-4 bg-light border border-3 rounded">
+        <form method="post">
+            <div class="text-center">
+                <h4 class="my-3">فرم ویرایش کاربر</h4>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.MemberForUpdate.Name" class="form-label"></label>
+                <input asp-for="@Model.MemberForUpdate.Name" type="text" class="form-control">
+                <span asp-validation-for="@Model.MemberForUpdate.Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.MemberForUpdate.LastName" class="form-label"></label>
+                <input asp-for="@Model.MemberForUpdate.LastName" type="text" class="form-control">
+                <span asp-validation-for="@Model.MemberForUpdate.LastName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.MemberForUpdate.BirthDay" class="form-label"></label>
+                <input asp-for="@Model.MemberForUpdate.BirthDay" type="date" class="form-control" value="@DateOnly.FromDateTime(DateTime.Now)">
+                <span asp-validation-for="@Model.MemberForUpdate.BirthDay" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.MemberForUpdate.PhoneNumber" class="form-label"></label>
+                <input asp-for="@Model.MemberForUpdate.PhoneNumber" type="number" class="form-control" maxlength="11">
+                <span asp-validation-for="@Model.MemberForUpdate.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.MemberForUpdate.NationalCode" class="form-label"></label>
+                <input asp-for="@Model.MemberForUpdate.NationalCode" type="number" class="form-control" maxlength="10">
+                <span asp-validation-for="@Model.MemberForUpdate.NationalCode" class="text-danger"></span>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" asp-for="@Model.MemberForUpdate.Gender" type="radio" value="@GenderEnum.Female">
+                <label class="form-check-label" asp-for="@Model.MemberForUpdate.Gender">زن</label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" asp-for="@Model.MemberForUpdate.Gender" type="radio" value="@GenderEnum.Male">
+                <label class="form-check-label" asp-for="@Model.MemberForUpdate.Gender">مرد</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" asp-for="@Model.MemberForUpdate.MemType" type="radio" value="@MemberShip.Gold" />
+                <label class="form-check-label" asp-for="@Model.MemberForUpdate.MemType">طلایی</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" asp-for="@Model.MemberForUpdate.MemType" type="radio" value="@MemberShip.Silver" />
+                <label class="form-check-label" asp-for="@Model.MemberForUpdate.MemType">نقره ای</label>
+            </div>
+            <div class="form-check mb-5">
+                <input class="form-check-input" asp-for="@Model.MemberForUpdate.MemType" type="radio" value="@MemberShip.Bronze" />
+                <label class="form-check-label" asp-for="@Model.MemberForUpdate.MemType">برنز</label>
+            </div>
+
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-success mb-3 fs-5">ذخیره</button>
+            </div>
+        </form>
+    </div>
+</body>
