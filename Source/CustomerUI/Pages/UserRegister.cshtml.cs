@@ -1,7 +1,7 @@
-using Data;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using MyData;
 using System.Security.Cryptography.X509Certificates;
 
 namespace CustomerUI.Pages
@@ -20,10 +20,18 @@ namespace CustomerUI.Pages
         [HttpPost]
         public void OnPost()
         {
+            if (NewMember != null)
+            {
+                DataBase.SaveMember(NewMember); 
+            }
+
+
+            var myList = DataBase.GetMembers();
+
             if (!ModelState.IsValid)
                 Page();
 
-            DataBase.Members.Add(NewMember);
+          //  DataBase.Members.Add(NewMember);
         }
     }
 }

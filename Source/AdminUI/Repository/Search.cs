@@ -1,5 +1,5 @@
-﻿using Data;
-using Entities;
+﻿using Entities;
+using MyData;
 
 namespace AdminUI.Repository
 {

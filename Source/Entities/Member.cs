@@ -1,5 +1,4 @@
-﻿//using Data;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Entities
@@ -8,8 +7,6 @@ namespace Entities
     {
         public Member()
         {
-            Id = 1;
-            //if(Database)
             RegisterDate = DateTime.Now;
         }
         public int Id { get; set; }

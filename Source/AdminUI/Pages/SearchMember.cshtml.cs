@@ -1,7 +1,7 @@
-using Data;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using MyData;
 
 namespace AdminUI.Pages
 {
