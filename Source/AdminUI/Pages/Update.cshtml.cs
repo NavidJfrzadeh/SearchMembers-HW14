@@ -17,9 +17,7 @@ namespace AdminUI.Pages
         [HttpGet]
         public IActionResult OnGet(int id)
         {
-            var targetMember = crudAction.GetUserById(id);
-
-            MemberForUpdate = targetMember;
+            MemberForUpdate = crudAction.GetUserById(id);
 
             if (MemberForUpdate == null)
                 return NotFound();
@@ -33,9 +31,9 @@ namespace AdminUI.Pages
         public IActionResult OnPost()
         {
             var targetMember = crudAction.GetUserById(MemberForUpdate.Id);
-            if (MemberForUpdate == null) return NotFound();
+            if (targetMember == null) return NotFound();
 
-            crudAction.UpdateUser(targetMember);
+            crudAction.UpdateUser(MemberForUpdate);
 
             return RedirectToPage("SearchMember");
         }

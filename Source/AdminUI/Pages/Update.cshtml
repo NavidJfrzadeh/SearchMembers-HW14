@@ -10,6 +10,9 @@
             <div class="text-center">
                 <h4 class="my-3">فرم ویرایش کاربر</h4>
             </div>
+            <div>
+                <input type="hidden" asp-for="@Model.MemberForUpdate.Id" value="@Model.MemberForUpdate.Id" />
+            </div>
             <div class="mb-3">
                 <label asp-for="@Model.MemberForUpdate.Name" class="form-label"></label>
                 <input asp-for="@Model.MemberForUpdate.Name" type="text" class="form-control">

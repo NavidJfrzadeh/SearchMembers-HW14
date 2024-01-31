@@ -7,18 +7,24 @@ public static class DataBase
 {
 
     #region Fields
-    private static readonly string _membersFilePath = "Members.json";
+    private static readonly string _membersFilePath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Members.json";
+
     public static List<Member> Members { get; set; } = new List<Member>();
     #endregion
 
     #region Methods
     public static List<Member> GetMembers() => Members;
 
-    public static void SaveMember(Member model)
+    public static bool SaveMember(Member model)
     {
-        model.Id = GenerateMemberId();
-        Members.Add(model);
-        SaveMembers<Member>(Members);
+        if (NationalCodeIsOk(model.NationalCode))
+        {
+            model.Id = GenerateMemberId();
+            Members.Add(model);
+            SaveMembers<Member>(Members);
+            return true;
+        }
+        return false;
     }
 
     public static void SaveMembers<T>(List<T> MemberList)
@@ -47,18 +53,37 @@ public static class DataBase
     #region PrivateMethods
     private static int GenerateMemberId()
     {
-        var data = File.ReadAllText(_membersFilePath);
-        var members = JsonConvert.DeserializeObject<List<Member>>(data);
+        //var data = File.ReadAllText(_membersFilePath);
+        //var members = JsonConvert.DeserializeObject<List<Member>>(data);
 
-        if (members != null)
+        Members = LoadMembers<Member>();
+
+        if (Members != null)
         {
-            var lastMemberId = members.Max(x => x.Id) + 1;
+            var lastMemberId = Members.Max(x => x.Id) + 1;
             return lastMemberId;
         }
         else
         {
             return 1;
         }
+    }
+
+    private static bool NationalCodeIsOk(string nationalCode)
+    {
+        Members = LoadMembers<Member>();
+
+        if (Members != null)
+        {
+            var isAvailable = Members.Select(x => x.NationalCode).Any(y => y.Equals(nationalCode));
+
+            if (!isAvailable)
+            {
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
     #endregion
 }

@@ -17,13 +17,13 @@
         </div>
 
         <div class="text-center">
-            <input type="submit" class="btn btn-primary" />
+            <input type="submit" class="btn btn-primary" value="جست و جو" />
         </div>
     </form>
 </div>
 
 
-<div class="my-5container">
+<div class="my-5 container">
     <h2 class="my-3">لیست کاربران</h2>
     <table class="table table-responsive table-striped table-hover">
         <thead>
@@ -31,11 +31,7 @@
                 <th scope="col">#</th>
                 <th scope="col">نام</th>
                 <th scope="col">نام خانوادگی</th>
-                <th scope="col">تاریخ تولد</th>
-                <th scope="col">شماره تماس</th>
-                <th scope="col">کد ملی</th>
-                <th scope="col">جنسیت</th>
-                <th scope="col">نوع عضویت</th>
+                <th scope="col">تاریخ ثبت</th>
                 <th scope="col">عملیات</th>
             </tr>
         </thead>
@@ -46,14 +42,10 @@
                     <th scope="row">@member.Id</th>
                     <td>@member.Name</td>
                     <td>@member.LastName</td>
-                    <td>@member.BirthDay</td>
-                    <td>@member.PhoneNumber</td>
-                    <td>@member.NationalCode</td>
-                    <td>@member.Gender</td>
-                    <td>@member.MemType</td>
+                    <td>@member.RegisterDate</td>
                     <td><a class="btn btn-outline-primary" asp-page="Details" asp-route-id="@member.Id">جزئیات</a></td>
                     <td><a class="btn btn-outline-warning" asp-page="Update" asp-route-id="@member.Id">ویرایش</a></td>
-                    <td><a class="btn btn-outline-danger" asp-page="Remove" asp-route-id="@member.Id">حذف</a></td>
+                    <td><a class="btn btn-outline-danger" asp-page="SearchMember" asp-page-handler="Delete" asp-route-id="@member.Id">حذف</a></td>
                 </tr>
             }
         </tbody>

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Services;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Entities
@@ -36,12 +37,13 @@ namespace Entities
         [Required(ErrorMessage = "کد ملی الزامی است")]
         [RegularExpression(@"^\d{10}$", ErrorMessage = "کد ملی باید شامل 10 رقم باشد")]
         [DisplayName("کد ملی")]
-        public int NationalCode { get; set; }
+        public string NationalCode { get; set; }
 
 
         [Required(ErrorMessage = "شماره همراه الزامی است")]
         [DisplayName("شماره همراه")]
         [DataType(DataType.PhoneNumber)]
+        [PhoneValidation(ErrorMessage ="شماره همراه باید با 09 شروع شود")]
         public string PhoneNumber { get; set; }
 
 

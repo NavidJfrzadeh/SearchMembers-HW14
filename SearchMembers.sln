@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerUI", "Source\Custom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdminUI", "Source\AdminUI\AdminUI.csproj", "{9D5B7299-F684-4777-9D51-F97684D6DF13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{FDFE58DC-A459-4A19-921C-3D096EC1BE4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{FDFE58DC-A459-4A19-921C-3D096EC1BE4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

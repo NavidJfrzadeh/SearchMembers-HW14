@@ -1,4 +1,4 @@
-using Entities;
+﻿using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyData;
@@ -20,18 +20,20 @@ namespace CustomerUI.Pages
         [HttpPost]
         public void OnPost()
         {
-            if (NewMember != null)
+            DataBase.Members = DataBase.LoadMembers<Member>();
+
+            if (ModelState.IsValid)
             {
-                DataBase.SaveMember(NewMember); 
+                if (NewMember != null)
+                {
+                    if (!DataBase.SaveMember(NewMember))
+                    {
+                        ModelState.AddModelError("NationalCode", "کد ملی تکراری است");
+                    }
+                }
             }
 
 
-            var myList = DataBase.GetMembers();
-
-            if (!ModelState.IsValid)
-                Page();
-
-          //  DataBase.Members.Add(NewMember);
         }
     }
 }

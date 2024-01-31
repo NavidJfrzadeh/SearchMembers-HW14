@@ -1,0 +1,37 @@
+﻿@page
+@model AdminUI.Pages.ShowMembersModel
+@{
+}
+
+<div class="my-5container">
+    <h2 class="my-3">لیست کاربران</h2>
+    <table class="table table-responsive table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">نام</th>
+                <th scope="col">نام خانوادگی</th>
+                <th scope="col">تاریخ تولد</th>
+                <th scope="col">شماره تماس</th>
+                <th scope="col">کد ملی</th>
+                <th scope="col">جنسیت</th>
+                <th scope="col">نوع عضویت</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @foreach (var member in Model.MemList)
+            {
+                <tr>
+                    <th scope="row">@member.Id</th>
+                    <td>@member.Name</td>
+                    <td>@member.LastName</td>
+                    <td>@member.BirthDay</td>
+                    <td>@member.PhoneNumber</td>
+                    <td>@member.NationalCode</td>
+                    <td>@member.Gender</td>
+                    <td>@member.MemType</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
