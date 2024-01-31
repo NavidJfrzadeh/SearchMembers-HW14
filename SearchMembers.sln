@@ -5,7 +5,7 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Source\Entities\Entities.csproj", "{EDFB8E78-2447-4B99-AD4C-58A0D8E31B3E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Source\Data\Data.csproj", "{3C5427A8-1F91-478D-AEEB-6E6A1C8DFD36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyData", "Source\Data\MyData.csproj", "{3C5427A8-1F91-478D-AEEB-6E6A1C8DFD36}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Core", "01-Core", "{B5AAE8F0-6543-4895-959E-E128D816CCF3}"
 EndProject

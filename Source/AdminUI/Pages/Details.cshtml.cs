@@ -1,5 +1,5 @@
 using AdminUI.Repository;
-using Data;
+using MyData;
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;

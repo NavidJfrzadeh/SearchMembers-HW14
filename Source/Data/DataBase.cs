@@ -1,7 +1,7 @@
 ﻿using Entities;
 using Newtonsoft.Json;
 
-namespace Data
+namespace MyData
 {
     public static class DataBase
     {

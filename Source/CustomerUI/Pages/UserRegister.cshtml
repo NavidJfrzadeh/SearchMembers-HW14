@@ -43,17 +43,14 @@
                 <input class="form-check-input" asp-for="@Model.NewMember.Gender" type="radio" value="@GenderEnum.Male">
                 <label class="form-check-label" asp-for="@Model.NewMember.Gender">مرد</label>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" asp-for="@Model.NewMember.MemType" type="radio" value="@MemberShip.Gold" />
-                <label class="form-check-label" asp-for="@Model.NewMember.MemType">طلایی</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" asp-for="@Model.NewMember.MemType" type="radio" value="@MemberShip.Silver" />
-                <label class="form-check-label" asp-for="@Model.NewMember.MemType">نقره ای</label>
-            </div>
-            <div class="form-check mb-5">
-                <input class="form-check-input" asp-for="@Model.NewMember.MemType" type="radio" value="@MemberShip.Bronze" />
-                <label class="form-check-label" asp-for="@Model.NewMember.MemType">برنز</label>
+            <div class="my-3">
+                <label class="form-label" asp-for="@Model.NewMember.MemType"></label>
+                <select class="form-select">
+                    <option selected value="@null">انتخاب کنید</option>
+                    <option value="@MemberShip.Gold">طلایی</option>
+                    <option value="@MemberShip.Silver">نقره ای</option>
+                    <option value="@MemberShip.Bronze">برنزی</option>
+                </select>
             </div>
 
             <div class="d-grid gap-2">

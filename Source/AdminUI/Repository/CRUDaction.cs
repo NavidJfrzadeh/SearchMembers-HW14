@@ -1,4 +1,4 @@
-﻿using Data;
+﻿using MyData;
 using Entities;
 
 namespace AdminUI.Repository
