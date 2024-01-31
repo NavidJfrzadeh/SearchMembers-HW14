@@ -1,3 +1,4 @@
+
 using Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -16,7 +17,7 @@ namespace AdminUI.Pages
 
         public void OnGet()
         {
-            Members = DataBase.GetMembers();
+            //Members = DataBase.GetMembers();
         }
 
 

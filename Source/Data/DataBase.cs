@@ -1,9 +1,9 @@
 ﻿using Entities;
 using Newtonsoft.Json;
 
-namespace MyData;
 
-public static class DataBase
+namespace MyData
+
 {
 
     #region Fields
