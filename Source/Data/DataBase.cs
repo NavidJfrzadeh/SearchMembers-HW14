@@ -9,10 +9,11 @@ public static class DataBase
     #region Fields
     private static readonly string _membersFilePath = "Members.json";
     public static List<Member> Members { get; set; } = new List<Member>();
-    public static List<Member> GetMembers() => Members;
     #endregion
 
     #region Methods
+    public static List<Member> GetMembers() => Members;
+
     public static void SaveMember(Member model)
     {
         model.Id = GenerateMemberId();
@@ -44,7 +45,7 @@ public static class DataBase
     #endregion
 
     #region PrivateMethods
-    private static int  GenerateMemberId()
+    private static int GenerateMemberId()
     {
         var data = File.ReadAllText(_membersFilePath);
         var members = JsonConvert.DeserializeObject<List<Member>>(data);

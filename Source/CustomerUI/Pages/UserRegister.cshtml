@@ -56,6 +56,16 @@
                 <label class="form-check-label" asp-for="@Model.NewMember.MemType">برنز</label>
             </div>
 
+            <div>
+                <label class="form-label" asp-for="@Model.NewMember.MemType"></label>
+                <select class="form-select" asp-for="@Model.NewMember.MemType">
+                    <option selected value="@null">انتخاب کنید</option>
+                    <option value="@MemberShip.Gold">طلایی</option>
+                    <option value="@MemberShip.Silver">نقره ای</option>
+                    <option value="@MemberShip.Bronze">برنزی</option>
+                </select>
+            </div>
+
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-success mb-3 fs-5">ثبت</button>
             </div>
