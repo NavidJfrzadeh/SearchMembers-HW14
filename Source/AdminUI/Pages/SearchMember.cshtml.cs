@@ -23,7 +23,7 @@ namespace AdminUI.Pages
 
 
         [HttpGet]
-        public void OnGet()
+        public void OnGet(List<Member> members)
         {
             Members = DataBase.GetMembers();
         }
@@ -44,6 +44,8 @@ namespace AdminUI.Pages
             var members = Search.GetMembers(MemberModel);
             TempData["members"] = JsonSerializer.Serialize(members);
             return RedirectToPage("ShowMembers");
+            //return RedirectToAction("OnGet", members);
+            //return Page();
         }
     }
 }

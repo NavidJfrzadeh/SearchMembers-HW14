@@ -6,10 +6,10 @@ namespace Entities
 {
     public class Member
     {
-        public Member()
-        {
-            RegisterDate = DateTime.Now;
-        }
+        //public Member()
+        //{
+        //    RegisterDate = DateTime.Now;
+        //}
         public int Id { get; set; }
 
 
@@ -25,13 +25,12 @@ namespace Entities
         public string LastName { get; set; }
 
 
-        public DateTime RegisterDate { get; set; }
+        public string? RegisterDate { get; set; }
 
 
         [Required(ErrorMessage = "تاریخ تولد الزامی است")]
         [DisplayName("تاریخ تولد")]
-        [DataType(DataType.Date, ErrorMessage = "تاریخ اشتباه وارد شده است")]
-        public DateTime BirthDay { get; set; }
+        public string BirthDay { get; set; }
 
 
         [Required(ErrorMessage = "کد ملی الزامی است")]
@@ -43,7 +42,7 @@ namespace Entities
         [Required(ErrorMessage = "شماره همراه الزامی است")]
         [DisplayName("شماره همراه")]
         [DataType(DataType.PhoneNumber)]
-        [PhoneValidation(ErrorMessage ="شماره همراه باید با 09 شروع شود")]
+        [PhoneValidation(ErrorMessage = "شماره همراه صحیح نیست")]
         public string PhoneNumber { get; set; }
 
 

@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Newtonsoft.Json;
+using Services;
 
 namespace MyData;
 
@@ -20,6 +21,8 @@ public static class DataBase
         if (NationalCodeIsOk(model.NationalCode))
         {
             model.Id = GenerateMemberId();
+            var d = DateTime.Now;
+            model.RegisterDate = d.ToPersianDate();
             Members.Add(model);
             SaveMembers<Member>(Members);
             return true;

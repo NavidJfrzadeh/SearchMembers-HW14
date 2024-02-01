@@ -23,13 +23,13 @@
             </div>
             <div class="mb-3">
                 <label asp-for="@Model.NewMember.BirthDay" class="form-label"></label>
-                <input asp-for="@Model.NewMember.BirthDay" type="date" class="form-control" value="@DateTime.Now">
+                <input class="form-control" asp-for="@Model.NewMember.BirthDay" data-jdp data-jdp-min-date="#aaa" data-jdp-max-date="today" />
                 <span asp-validation-for="@Model.NewMember.BirthDay" class="text-danger"></span>
             </div>
-            @* <div class="form-group">
-                <label asp-for="@Model.NewMember.BirthDay" class="control-label"></label>
-                <input asp-for="@Model.NewMember.BirthDay" id="persianDateInput" class="form-control" />
-                <span asp-validation-for="@Model.NewMember.BirthDay" class="text-danger"></span>
+            @*             <div class="form-group">
+            <label asp-for="@Model.NewMember.BirthDay" class="control-label"></label>
+            <input asp-for="@Model.NewMember.BirthDay" id="persianDateInput" class="form-control" value="@Model.NewMember.BirthDay" />
+            <span asp-validation-for="@Model.NewMember.BirthDay" class="text-danger"></span>
             </div> *@
             <div class="mb-3">
                 <label asp-for="@Model.NewMember.PhoneNumber" class="form-label"></label>
@@ -51,11 +51,10 @@
             </div>
             <div class="my-3">
                 <label class="form-label" asp-for="@Model.NewMember.MemType"></label>
-                <select class="form-select">
-                    <option selected value="@null">انتخاب کنید</option>
+                <select class="form-select" asp-for="@Model.NewMember.MemType">
                     <option value="@MemberShip.Gold">طلایی</option>
                     <option value="@MemberShip.Silver">نقره ای</option>
-                    <option value="@MemberShip.Bronze">برنزی</option>
+                    <option value="@MemberShip.Bronze">برنز</option>
                 </select>
             </div>
 

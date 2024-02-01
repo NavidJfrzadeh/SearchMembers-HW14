@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyData;
-using System.Security.Cryptography.X509Certificates;
 
 namespace CustomerUI.Pages
 {
