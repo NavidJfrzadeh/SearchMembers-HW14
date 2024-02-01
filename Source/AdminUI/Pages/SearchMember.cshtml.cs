@@ -11,7 +11,7 @@ namespace AdminUI.Pages
     {
         CRUDaction actions = new CRUDaction();
         Search Search = new Search();
-        public List<Member> Members { get; set; }
+        public List<Member> ModelList { get; set; } = new List<Member>();
 
         [BindProperty]
         public MemberModel MemberModel { get; set; }
@@ -23,9 +23,9 @@ namespace AdminUI.Pages
 
 
         [HttpGet]
-        public void OnGet(List<Member> members)
+        public void OnGet()
         {
-            //Members = DataBase.GetMembers();
+            ModelList = DataBase.GetMembers();
         }
 
         [HttpGet]
