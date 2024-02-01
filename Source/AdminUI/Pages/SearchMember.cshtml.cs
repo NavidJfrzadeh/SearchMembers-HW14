@@ -25,7 +25,7 @@ namespace AdminUI.Pages
         [HttpGet]
         public void OnGet(List<Member> members)
         {
-            Members = DataBase.GetMembers();
+            //Members = DataBase.GetMembers();
         }
 
         [HttpGet]

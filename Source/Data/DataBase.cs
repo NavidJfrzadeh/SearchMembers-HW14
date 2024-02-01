@@ -2,9 +2,9 @@
 using Newtonsoft.Json;
 using Services;
 
-namespace MyData;
 
-public static class DataBase
+namespace MyData
+
 {
 
     #region Fields
