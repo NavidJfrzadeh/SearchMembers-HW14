@@ -59,9 +59,6 @@ namespace MyData
         #region PrivateMethods
         private static int GenerateMemberId()
         {
-            //var data = File.ReadAllText(_membersFilePath);
-            //var members = JsonConvert.DeserializeObject<List<Member>>(data);
-
             Members = LoadMembers<Member>();
 
             if (Members != null)
